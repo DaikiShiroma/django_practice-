@@ -26,8 +26,12 @@ class Tests(models.Model):
 
 class TestResults(models.Model):
     score=models.IntegerField()
-    students=models.ForeignKey(
+    student=models.ForeignKey(
         "Students",
+        on_delete=models.CASCADE,
+    )
+    test=models.ForeignKey(
+        "Tests",
         on_delete=models.CASCADE,
     )
 
